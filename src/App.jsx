@@ -1,12 +1,21 @@
-
-import './App.css'
+import { useState } from 'react'
+import Navbar from './components/Navbar/Navbar'
+import Hero from './components/Hero/Hero'
+import SearchBar from './components/SearchBar/SearchBar'
+import ProductGrid from './components/ProductGrid/ProductGrid'
+import CategoryFilter from './components/CategoryFilter/CategoryFilter'
 
 function App() {
+  const [search, setSearch] = useState('')
 
   return (
-    
-    <h1>Welcome to ShopSphere</h1>
-   
+    <>
+      <Navbar />
+      <Hero />
+      <SearchBar search={search} setSearch={setSearch} />
+        <CategoryFilter />
+      <ProductGrid search={search} />
+    </>
   )
 }
 
