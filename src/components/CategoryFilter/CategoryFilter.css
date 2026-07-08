@@ -21,3 +21,8 @@
   background-color: #2563eb;
   color: white;
 }
+.category-filter button.active {
+  background-color: #2563eb;
+  color: white;
+  transform: scale(1.05);
+}

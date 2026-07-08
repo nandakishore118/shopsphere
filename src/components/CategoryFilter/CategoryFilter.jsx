@@ -1,12 +1,29 @@
 import './CategoryFilter.css'
 
-const CategoryFilter = () => {
+const CategoryFilter = ({ category, setCategory }) => {
   return (
-    <div className="category-filter">
-      <button>All</button>
-      <button>Audio</button>
-      <button>Wearables</button>
-      <button>Accessories</button>
+        <div className="category-filter">
+      <button 
+      className={category === 'All' ? 'active' : ''}
+      onClick={() => setCategory('All')}>All</button>
+
+      <button 
+      className={category === 'Audio' ? 'active' : ''}
+      onClick={() => setCategory('Audio')}>
+        Audio
+      </button>
+
+      <button 
+      className={category === 'Wearables' ? 'active' : ''}
+      onClick={() => setCategory('Wearables')}>
+        Wearables
+      </button>
+
+      <button 
+       className={category === 'Accessories' ? 'active' : ''}
+      onClick={() => setCategory('Accessories')}>
+        Accessories
+      </button>
     </div>
   )
 }

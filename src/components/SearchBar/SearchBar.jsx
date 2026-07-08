@@ -5,12 +5,23 @@ const SearchBar = ({ search, setSearch }) => {
     <div className="search-container">
       <h2>Search Products</h2>
 
-      <input
-        type="text"
-        placeholder="Search products..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="🔍 Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+
+        {search && (
+          <span
+            className="clear-btn"
+            onClick={() => setSearch("")}
+          >
+            ✖
+          </span>
+        )}
+      </div>
     </div>
   )
 }

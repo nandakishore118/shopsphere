@@ -7,14 +7,20 @@ import CategoryFilter from './components/CategoryFilter/CategoryFilter'
 
 function App() {
   const [search, setSearch] = useState('')
+  const [category, setCategory] = useState('All')
 
   return (
     <>
       <Navbar />
       <Hero />
-      <SearchBar search={search} setSearch={setSearch} />
-        <CategoryFilter />
-      <ProductGrid search={search} />
+      <SearchBar search={search}
+       setSearch={setSearch} />
+        <CategoryFilter
+            category={category}
+            setCategory={setCategory}
+          />
+      <ProductGrid search={search}
+      category={category} />
     </>
   )
 }

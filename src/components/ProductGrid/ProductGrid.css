@@ -49,3 +49,42 @@ grid-template-columns: repeat(4, minmax(0, 1fr));  gap: 20px;
     grid-template-columns: 1fr;
   }
 }
+
+.empty-state {
+  grid-column: 1 / -1;
+  width: 100%;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-state h1 {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.empty-state h2 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.empty-state button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.empty-state button:hover {
+  background: #1d4ed8;
+}
