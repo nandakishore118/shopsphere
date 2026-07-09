@@ -1,31 +1,57 @@
 import './ProductCard.css'
 
 const ProductCard = ({
-  image,
+ image,
   name,
   price,
   rating,
   discount,
+  setCartCount,
 }) => {
+    const originalPrice = Math.round(
+    price / (1 - discount / 100)
+    )
   return (
     <div className="product-card">
-      
-      <span className="discount-badge">
-         -{discount}%
-     </span>
-     
-      <img src={image} alt={name} />
 
-      <h3>{name}</h3>
+  <span className="discount-badge">-{discount}%</span>
 
-       <div className="rating">
-           ⭐ {rating}
-       </div>
+  <span className="wishlist">❤</span>
 
-      <p>₹{price}</p>
+  <div className="product-content">
 
-      <button>Add to Cart</button>
+    <img src={image} alt={name} />
+
+    <h3>{name}</h3>
+
+    <div className="rating">
+      ⭐⭐⭐⭐⭐
+      <span className="rating-number">({rating})</span>
     </div>
+
+    <div className="price-section">
+       <span className="current-price">
+          ₹{price}
+        </span>
+
+        <span className="original-price">
+          ₹{originalPrice}
+        </span>
+    </div>
+
+    <p className="delivery">
+      🚚 Free Delivery
+    </p>
+
+  </div>
+
+  <button
+    onClick={() => setCartCount((prev) => prev + 1)}
+  >
+    🛒 Add to Cart
+  </button>
+
+</div>
   )
 }
 
