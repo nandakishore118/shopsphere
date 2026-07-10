@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import SearchBar from './components/SearchBar/SearchBar'
-import ProductGrid from './components/ProductGrid/ProductGrid'
-import CategoryFilter from './components/CategoryFilter/CategoryFilter'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import Login from './pages/Login'
+import Layout from './components/Layout/Layout'
 
 function App() {
-  const [search, setSearch] = useState('')
-  const [cartCount, setCartCount] = useState(0)
-  const [category, setCategory] = useState('All')
-
   return (
-    <>
-      <Navbar
-          cartCount={cartCount}
-          setCartCount={setCartCount}
-        />
-      <Hero />
-      <SearchBar search={search}
-       setSearch={setSearch} />
-        <CategoryFilter
-            category={category}
-            setCategory={setCategory}
-          />
-      <ProductGrid 
-      search={search}
-      category={category} 
-       setCartCount={setCartCount}
+    <Layout>
+  {(setCartCount) => (
+    <Routes>
+      <Route 
+        path="/" 
+        element={<Home setCartCount={setCartCount} />} 
       />
-    </>
+
+      <Route path="/cart" element={<Cart />} />
+
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  )}
+</Layout>
   )
 }
 

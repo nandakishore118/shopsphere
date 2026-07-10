@@ -1,32 +1,30 @@
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
-const Navbar = ({ cartCount, setCartCount }) => {
+const Navbar = ({ cartCount}) => {
     return (
     <nav className="navbar">
       <div className="logo">
-        <h2>ShopSphere</h2>
+        <Link to="/" className="logo-link">
+          <h2>ShopSphere</h2>
+        </Link>
       </div>
 
       <ul className="nav-links">
-        <li><a href="/">Home</a></li>w
+        <li><Link to="/">Home</Link></li>
         <li><a href="/">Products</a></li>
         <li><a href="/">Categories</a></li>
 
         <li className="cart-link">
-          <a
-            href="/"
-            onClick={() => setCartCount(0)}
-          >
+          <Link to="/cart">
             🛒 Cart
-
             <span className="cart-badge">
               {cartCount}
             </span>
-
-          </a>
+          </Link>
         </li>
 
-        <li><a href="/">Login</a></li>
+        <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>
   )
