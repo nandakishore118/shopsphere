@@ -2,7 +2,12 @@ import ProductCard from '../ProductCard/ProductCard'
 import './ProductGrid.css'
 import products from '../../data/products'
 
-const ProductGrid = ({ search, category, setCartCount }) => {
+const ProductGrid = ({
+  search,
+  category,
+  cartItems,
+  setCartItems,
+}) => {
 
   const filteredProducts = products.filter((product) => {
   const matchesSearch = product.name
@@ -30,12 +35,14 @@ const ProductGrid = ({ search, category, setCartCount }) => {
       filteredProducts.map((product) => (
         <ProductCard
           key={product.id}
+          id={product.id}
           image={product.image}
           name={product.name}
           price={product.price}
           rating={product.rating}
           discount={product.discount}
-          setCartCount={setCartCount}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
         />
       ))
     ) : (

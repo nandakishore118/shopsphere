@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar/SearchBar'
 import ProductGrid from '../components/ProductGrid/ProductGrid'
 import CategoryFilter from '../components/CategoryFilter/CategoryFilter'
 
-const Home = ({ setCartCount }) => {
+const Home = ({ cartItems, setCartItems, cartCount }) => {
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState('All')
 
@@ -25,10 +25,11 @@ const Home = ({ setCartCount }) => {
       />
 
       <ProductGrid
-        search={search}
-        category={category}
-        setCartCount={setCartCount}
-      />
+          search={search}
+          category={category}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+        />
     </>
   )
 }

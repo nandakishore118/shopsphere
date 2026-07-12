@@ -1,16 +1,30 @@
 import './ProductCard.css'
 
 const ProductCard = ({
- image,
+  id,
+  image,
   name,
   price,
   rating,
   discount,
-  setCartCount,
+  cartItems,
+  setCartItems,
 }) => {
     const originalPrice = Math.round(
     price / (1 - discount / 100)
     )
+    const addToCart = () => {
+      const item = {
+        id,
+        image,
+        name,
+        price,
+        rating,
+        discount,
+      }
+
+  setCartItems([...cartItems, item])
+}
   return (
     <div className="product-card">
 
@@ -45,12 +59,9 @@ const ProductCard = ({
 
   </div>
 
-  <button
-    onClick={() => setCartCount((prev) => prev + 1)}
-  >
-    🛒 Add to Cart
-  </button>
-
+  <button onClick={addToCart}>
+  🛒 Add to Cart
+   </button>
 </div>
   )
 }

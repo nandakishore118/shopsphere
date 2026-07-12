@@ -7,14 +7,28 @@ import Layout from './components/Layout/Layout'
 function App() {
   return (
     <Layout>
-  {(setCartCount) => (
+  {(cartItems, setCartItems, cartCount) => (
     <Routes>
-      <Route 
-        path="/" 
-        element={<Home setCartCount={setCartCount} />} 
+      <Route
+        path="/"
+        element={
+          <Home
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+            cartCount={cartCount}
+          />
+        }
       />
 
-      <Route path="/cart" element={<Cart />} />
+      <Route
+        path="/cart"
+        element={
+          <Cart
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />
+        }
+      />
 
       <Route path="/login" element={<Login />} />
     </Routes>

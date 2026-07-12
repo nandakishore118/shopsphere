@@ -3,13 +3,14 @@ import Navbar from '../Navbar/Navbar'
 
 const Layout = ({ children }) => {
 
-  const [cartCount, setCartCount] = useState(0)
+  const [cartItems, setCartItems] = useState([])
+  const cartCount = cartItems.length
 
   return (
     <>
       <Navbar cartCount={cartCount} />
 
-      {children(setCartCount)}
+      {children(cartItems, setCartItems, cartCount)}
     </>
   )
 }

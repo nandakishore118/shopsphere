@@ -12,8 +12,8 @@ const Navbar = ({ cartCount}) => {
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li><a href="/">Products</a></li>
-        <li><a href="/">Categories</a></li>
+        <li><Link to="/">Products</Link></li>
+        <li><Link to="/">Categories</Link></li>
 
         <li className="cart-link">
           <Link to="/cart">
